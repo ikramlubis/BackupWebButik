@@ -45,7 +45,7 @@ class UserController extends Controller
         $user = User::create($request->validated() + ['password' => bcrypt($request->password)]);
         $user->roles()->sync($request->input('roles'));
 
-        return redirect()->route('admin.users.index')->with('message', "Successfully Created !");   
+        return redirect()->route('admin.users.index')->with('message', "Successfully Created !");
     }
 
     /**
@@ -70,6 +70,7 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request,User $user)
     {
+        $user->update(['username' => ($request->name)]);
         $user->update($request->validated() + ['password' => bcrypt($request->password)]);
         $user->roles()->sync($request->input('roles'));
 

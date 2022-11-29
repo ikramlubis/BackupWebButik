@@ -8,12 +8,12 @@
                             @if($review->user && $review->user->user_image)
                                 <img class="rounded-circle" src="{{ asset('storage/images/users/' . $review->user->user_image) }}" alt="" width="50">
                             @else
-                                <img src="https://ui-avatars.com/api/?name={{ $review->user->name }}&background=0d8abc&color=fff" alt="{{ $review->name }}">
+                                <img src="https://ui-avatars.com/api/?name={{ $review->user->username }}&background=0d8abc&color=fff" alt="{{ $review->name }}">
                             @endif
                         </div>
                         <div class="content d-flex" style="column-gap: 2rem;">
                             <div class="">
-                                <strong>{{ $review->user->name }}</strong>
+                                <strong>{{ $review->user->username }}</strong>
                                 <small class="comnt__author d-block d-sm-flex">{{ $review->created_at ? $review->created_at->format('d M, Y') : '' }}</small>
                                 <div>
                                     @if($review->rating)
@@ -45,7 +45,7 @@
                     </div>
                 </li>
             @empty
-                <a class="m-2">Be the first to write your review!</a>
+                <a class="m-2">Jadilah yang pertama untuk membuat review!</a>
             @endforelse
         </ul>
     </div>
@@ -108,13 +108,13 @@
             @endif
         @else
             <div class="alert alert-danger" role="alert">
-                <small>Must buy this product before write a review.</small>
+                <small>Harus membeli produk ini sebelum membuat review.</small>
             </div>
         @endif
     </div>
     @else
         <a href="{{ route('login') }}" class="btn btn-dark">
-            Login to write a review!
+            Login jika ingin membuat review!
         </a>
     @endauth
 </div>

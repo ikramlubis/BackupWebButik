@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/favicon.png') }}">
-		
+
 		<!-- all css here -->
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/magnific-popup.css') }}">
@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="{{ asset('frontend/assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
-        
+
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/custom.css') }}">
 
         <!-- CSRF Token -->
@@ -50,17 +50,14 @@
                                             <a href="/">home</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('shop.index') }}">shop</a>
+                                            <a href="{{ route('shop.index') }}">Belanja</a>
                                         </li>
-                                        <li><a href="#">Categories</a>
+                                        <li><a href="#">Kategori</a>
                                             <ul class="single-dropdown">
                                                 @foreach($categories_menu as $category_menu)
                                                     <li><a href="{{ route('shop.index', $category_menu->slug) }}">{{ $category_menu->name }}</a></li>
                                                 @endforeach
                                             </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">contact</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -107,7 +104,7 @@
                                             <a class="cart-btn btn-hover" href="{{ route('checkout.process') }}">checkout</a>
                                         </li>
                                     </ul>
-                                 @endif   
+                                 @endif
                             </div>
                         </div>
                         <div class="row">
@@ -121,16 +118,15 @@
                                             <li>
                                                 <a href="{{ route('shop.index') }}">shop</a>
                                             </li>
-                                            <li><a href="#">categories</a>
+                                            <li><a href="#">Kategori</a>
                                                 <ul>
                                                 @foreach($categories_menu as $category_menu)
                                                     <li><a href="{{ route('shop.index', $category_menu->slug) }}">{{ $category_menu->name }}</a></li>
                                                 @endforeach
                                                 </ul>
                                             </li>
-                                            <li><a href="#"> Contact  </a></li>
                                         </ul>
-                                    </nav>							
+                                    </nav>
                                 </div>
                             </div>
                         </div>
@@ -142,10 +138,10 @@
                             <div class="furniture-login">
                                 <ul>
                                     @guest
-                                        <li>Get Access: <a href="{{ route('login') }}">Login</a></li>
-                                        <li><a href="{{ route('register') }}">Register</a></li>
+                                        <li>Get Access: <a href="{{ route('login') }}">Masuk</a></li>
+                                        <li><a href="{{ route('register') }}">Daftar</a></li>
                                     @else
-                                        <li>Hello: <a href="{{ route('profile.index') }}">{{ auth()->user()->username }}</a></li>
+                                        <li>Halo: <a href="{{ route('profile.index') }}">{{ auth()->user()->username }}</a></li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -160,7 +156,7 @@
                             </div>
                             <div class="furniture-search">
                                 <form>
-                                    <input placeholder="I am Searching for . . ." type="text" name="q" autocomplete="off" id="search">
+                                    <input placeholder="Aku ingin mencari . . ." type="text" name="q" autocomplete="off" id="search">
                                     <button disabled>
                                         <i class="ti-search"></i>
                                     </button>
@@ -169,11 +165,11 @@
                             <div class="furniture-wishlist">
                                 <ul>
                                     <li>
-                                        <a href="{{ route('favorite.index') }}"><i class="ti-heart"></i> Favorites</a>
+                                        <a href="{{ route('favorite.index') }}"><i class="ti-heart"></i> Favorit</a>
                                     </li>
                                     @auth
                                     <li>
-                                        <a href="{{ route('orders.index') }}"><i class="ti-money"></i> Orders</a>
+                                        <a href="{{ route('orders.index') }}"><i class="ti-money"></i> Pesanan</a>
                                     </li>
                                     @endauth
                                 </ul>
@@ -188,32 +184,31 @@
 
         <!-- footer -->
         <footer class="footer-area">
-            <div class="footer-top-area pt-70 pb-35 wrapper-padding-5">
-                <div class="container-fluid">
-                    <div class="widget-wrapper">
-                        <div class="footer-widget mb-30">
+            <div class="footer-top-area pt-50 pb-35 wrapper-padding-5">
+                    <div class="widget-wrapper p-5" style="border: 1px solid #e0e0e0;">
+                        <div class="footer-widget mb-30 col-md-6" style="border-right: 1px solid #e0e0e0;" >
                         <img height="60" style="transform:scale(1.5);object-fit: cover;" src="{{ asset('frontend/assets/img/logo/logo.png') }}" alt="">
                             <div class="footer-about-2">
-                                <p>There are many variations of passages of Lorem Ipsum <br>the majority have suffered alteration in some form, by <br> injected humour</p>
+                                <p>Masukkan Deskripsi 1<br>Masukkan Deskripsi 2<br>Masukkan Deskripsi 3</p>
                             </div>
                         </div>
-                        <div class="footer-widget mb-30">
-                            <h3 class="footer-widget-title-5">Contact Info</h3>
+                        <div class="footer-widget mb-30 col-md-6" >
+                            <h3 class="footer-widget-title-5">Info Kontak</h3>
                             <div class="footer-info-wrapper-3">
                                 <div class="footer-address-furniture">
                                     <div class="footer-info-icon3">
-                                        <span>Address: </span>
+                                        <span>Alamat: </span>
                                     </div>
                                     <div class="footer-info-content3">
-                                        <p>66 Sipu road Rampura Banasree <br>USA- 10800</p>
+                                        <p>--Masukkan Alamat-- <br>--Masukkan Alamat--</p>
                                     </div>
                                 </div>
                                 <div class="footer-address-furniture">
                                     <div class="footer-info-icon3">
-                                        <span>Phone: </span>
+                                        <span>Telepon: </span>
                                     </div>
                                     <div class="footer-info-content3">
-                                        <p>+8801 (33) 515609735 <br>+8801 (66) 223352333</p>
+                                        <p>--Masukkan Telepon--<br>--Masukkan Telepon--</p>
                                     </div>
                                 </div>
                                 <div class="footer-address-furniture">
@@ -221,36 +216,19 @@
                                         <span>E-mail: </span>
                                     </div>
                                     <div class="footer-info-content3">
-                                        <p><a href="#"> email@domain.com</a> <br><a href="#"> domain@mail.info</a></p>
+                                        <p><a href="#"> --email@domain.com--</a></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="footer-widget mb-30">
-                            <h3 class="footer-widget-title-5">Newsletter</h3>
-                            <div class="footer-newsletter-2">
-                                <p>Send us your mail or next updates</p>
-                                <div id="mc_embed_signup" class="subscribe-form-5">
-                                    <form action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                        <div id="mc_embed_signup_scroll" class="mc-form">
-                                            <input type="email" value="" name="EMAIL" class="email" placeholder="Enter mail address" required>
-                                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                            <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
-                                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
             </div>
             <div class="footer-bottom ptb-20 gray-bg-8">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
                             <div class="copyright-furniture">
-                                <p>Copyright © <a href="https://hastech.company/">HasTech</a> 2018 . All Right Reserved.</p>
+                                <p>Copyright © <a href="#">Devina Collection</a> 2022 . All Right Reserved.</p>
                             </div>
                         </div>
                     </div>
@@ -259,8 +237,8 @@
         </footer>
 
 
-     
-       
+
+
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
         @livewireScripts
 		<!-- all js here -->

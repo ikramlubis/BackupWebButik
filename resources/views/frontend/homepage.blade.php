@@ -2,7 +2,7 @@
 @section('title', 'Homepage')
 @section('content')
      <!-- slides -->
-     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">       
+     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 @foreach($slides as $key => $slide)
                     <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
@@ -12,7 +12,7 @@
                             <p>{!! $slide->body !!}</p>
                             <a class="furniture-slider-btn btn-hover animated text-white" style="border: 1px solid #fff;" href="{{ $slide->url }}">Go</a>
                         </div>
-                    </div>    
+                    </div>
                 @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -29,7 +29,7 @@
         <!-- categories -->
         <div class="container mt-5">
                 <div class="section-title-furits text-center">
-                    <h2>BROWSE OUR CATEGORIES</h2>
+                    <h2>LIHATLAH KATEGORI KAMI</h2>
                 </div>
                 <br>
             <div class="row mt-5">
@@ -38,8 +38,8 @@
                         <div class="card category-card">
                             <a href="{{ route('shop.index', $category->slug) }}">
                                 <img class="img-cover" src="{{ Storage::url('images/categories/'. $category->cover) }}" alt="">
-                                <span 
-                                class="position-absolute category-name" 
+                                <span
+                                class="position-absolute category-name"
                                 style=" position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);background-color: white;padding: .8rem 1rem;border: 3px solid #f0f0f0;">
                                     {{ $category->name }}
                                 </span>
@@ -55,35 +55,35 @@
         <div class="services-area wrapper-padding-4 gray-bg pt-120 pb-80">
             <div class="container-fluid">
                 <div class="section-title-furits text-center">
-                    <h2>Why Choose Us</h2>
+                    <h2>Kenapa Memilih Kami</h2>
                 </div>
                 <br>
                 <div class="services-wrapper mt-40">
-                    <div class="single-services mb-40">
+                    <div class="single-services mb-40 col-md-4">
                         <div class="services-img">
                             <img src="{{ asset('frontend/assets/img/icon-img/26.png') }}" alt="">
                         </div>
                         <div class="services-content">
-                            <h4>Free Shippig</h4>
-                            <p>Contrary to popular belief, Lorem Ipsum is random text. </p>
+                            <h4>Pengiriman Cepat</h4>
+                            <p>Cepat Memesan, Cepat diantar :) </p>
                         </div>
                     </div>
-                    <div class="single-services mb-40">
+                    <div class="single-services mb-40 col-md-4">
                         <div class="services-img">
                             <img src="{{ asset('frontend/assets/img/icon-img/27.png') }}" alt="">
                         </div>
                         <div class="services-content">
-                            <h4>24/7 Support</h4>
-                            <p>Contrary to popular belief, Lorem Ipsum is random text. </p>
+                            <h4>Bantuan 24 Jam</h4>
+                            <p>Silahkan telpon kontak kami, untuk bantuan 24 jam!</p>
                         </div>
                     </div>
-                    <div class="single-services mb-40">
+                    <div class="single-services mb-40 col-md-4">
                         <div class="services-img">
                             <img src="{{ asset('frontend/assets/img/icon-img/28.png') }}" alt="">
                         </div>
                         <div class="services-content">
-                            <h4>Secure Payments</h4>
-                            <p>Contrary to popular belief, Lorem Ipsum is random text. </p>
+                            <h4>Aman Membayar</h4>
+                            <p>Menggunakan Sistem pembayaran yang aman, cepat, dan terpercaya.</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
             <div class="container-fluid">
                 <br>
                 <div class="section-title-furits section-title-6 text-center mb-50">
-                    <h2>Popular Product</h2>
+                    <h2>Produk Populer</h2>
                 </div>
                 <br>
                 <div class="product-style">

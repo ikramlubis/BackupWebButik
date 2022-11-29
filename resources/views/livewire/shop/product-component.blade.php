@@ -5,16 +5,16 @@
                 <div class="shop-found-selector">
                     <div class="shop-found">
                         <p class="small">
-                            Showing {{ $products->firstItem() }} - {{ $products->lastItem() }} of {{ $products->total() }} results
+                            Menunjukkan {{ $products->firstItem() }} - {{ $products->lastItem() }} dari {{ $products->total() }} hasil
                         </p>
                     </div>
                     <div wire:ignore class="shop-selector">
-                        <label>Sort By :</label>
+                        <label>Urutkan Berdasar :</label>
                         <select wire:model="sortingBy" name="sortingBy">
-                            <option value="default">Default sorting</option>
-                            <option value="popularity">Popularity</option>
-                            <option value="low-high">Price: Low to High</option>
-                            <option value="high-low">Price: High to Low</option>
+                            <option value="default">Default</option>
+                            <option value="popularity">Popularitas</option>
+                            <option value="low-high">Harga: Rendah ke Tinggi</option>
+                            <option value="high-low">Harga: Tinggi ke Rendah</option>
                         </select>
 
                     </div>

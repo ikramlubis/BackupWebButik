@@ -72,7 +72,7 @@
                                         @endif
                                     </div>
                                 </span>
-                                <span>{{ $product->approved_reviews_count }} Ratting (S)</span>
+                                <span>{{ $product->approved_reviews_count }} Rating (S)</span>
                             </div>
                         </div>
                         <div class="details-price">
@@ -88,7 +88,7 @@
                                         <input type="number" name="qty" min="1" value="1" class="cart-plus-minus-box" placeholder="qty">
                                     </div>
                                     <div class="quickview-btn-cart">
-                                        <button type="submit" class="submit contact-btn btn-hover">add to cart</button>
+                                        <button type="submit" class="submit contact-btn btn-hover">tambah ke keranjang</button>
                                     </div>
                                     <div class="quickview-btn-wishlist">
                                         <a class="btn-hover" href="#"><i class="pe-7s-like"></i></a>
@@ -97,7 +97,7 @@
 							</form>
                         <div class="product-details-cati-tag mt-35">
                             <ul>
-                                <li class="categories-title">Categories :</li>
+                                <li class="categories-title">Kategori :</li>
                                 <li><a class="badge badge-warning text-white" href="{{ route('shop.index', $product->category->slug) }}">{{ $product->category->name }}</a></li>
                             </ul>
                         </div>
@@ -115,20 +115,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="product-share">
-                            <ul>
-                                <li class="categories-title">Share :</li>
-                                <li>
-                                <iframe
-                                        src="https://www.facebook.com/plugins/share_button.php?href={{ URL::current() }}&layout=button&size=small&appId=1079454672514017&width=75&height=20"
-                                        width="75" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-
-                                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
-                                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -139,10 +125,10 @@
             <div class="product-description-review text-center">
                 <div class="description-review-title nav" role=tablist>
                     <a class="active" href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
-                        Reviews ({{ $product->approved_reviews_count }})
+                        Review ({{ $product->approved_reviews_count }})
                     </a>
                     <a href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
-                        Description
+                        Deskripsi
                     </a>
                 </div>
                 <div class="description-review-text tab-content">
