@@ -1,7 +1,7 @@
---Download Repo
+**Download Repo
 
---php artisan migrate:fresh --seed
+**php artisan migrate:fresh --seed
 
---php artisan storage:link
+**php artisan storage:link
 
---menggunakan ngrok.io
+**menggunakan ngrok.io
