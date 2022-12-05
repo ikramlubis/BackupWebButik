@@ -280,6 +280,7 @@ class OrderController extends Controller
 					if ($orderItem) {
 						$product = Product::findOrFail($product->id);
 						$product->quantity -= $item->quantity;
+                        $product->sold += $item->quantity;
 						$product->save();
 					}
 				}

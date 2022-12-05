@@ -109,7 +109,7 @@ class OrderController extends Controller
         );
 
         $order = Order::findOrFail($id);
-		
+
 		$cancelOrder = \DB::transaction(
 			function () use ($order, $request) {
 				$params = [
@@ -126,7 +126,7 @@ class OrderController extends Controller
                         $product->save();
 					}
 				}
-				
+
 				return $cancelOrder;
 			}
 		);
@@ -140,7 +140,7 @@ class OrderController extends Controller
     public function complete(Request $request, $id)
 	{
 		$order = Order::findOrFail($id);
-		
+
 		if (!$order->isDelivered()) {
 			return redirect()->route('admin.orders.index');
 		}
@@ -148,7 +148,7 @@ class OrderController extends Controller
 		$order->status = Order::COMPLETED;
 		$order->approved_by = auth()->id();
 		$order->approved_at = now();
-		
+
 		if ($order->save()) {
 			return redirect()->route('admin.orders.index')->with([
                 'message' => 'completed order !',

@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->longText('details');
             $table->integer('weight');
             $table->integer('quantity')->default(0);
+            $table->integer('sold')->default(0);
             $table->boolean('status')->default(false);
             $table->unsignedTinyInteger('review_able')->default(1);
             $table->foreignId('category_id')->nullable()->constrained()->cascadeOnDelete();
