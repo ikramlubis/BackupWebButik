@@ -36,6 +36,7 @@ class PermissionSeed extends Seeder
             [ 'title' => 'product_edit',],
             [ 'title' => 'product_view',],
             [ 'title' => 'product_delete',],
+            [ 'title' => 'slide_create',],
         ];
 
             Permission::insert($permissions);

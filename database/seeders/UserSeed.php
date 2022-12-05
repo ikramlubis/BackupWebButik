@@ -16,11 +16,17 @@ class UserSeed extends Seeder
     {
         $users = [
             [
-                'username'           => 'admin',
+                'username'       => 'admin',
                 'email'          => 'admin@gmail.com',
                 'password'       => bcrypt('12345678'),
                 'remember_token' => NULL,
             ],
+            [
+                'username'      => 'ikram',
+                'email'         => 'ikram@gmail.com',
+                'password'      => bcrypt('ikram123'),
+                'remember_token'=> NULL,
+            ]
         ];
 
         User::insert($users);

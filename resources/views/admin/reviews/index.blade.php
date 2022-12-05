@@ -28,7 +28,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>
                             <a href="{{ route('admin.reviews.show', $review->id) }}">
-                                {{ $review->user_id ? $review->user->name : $review->name }}
+                                {{ $review->user_id ? $review->user->username : $review->username }}
                             </a><br>
                             <small>{{ $review->email }}</small><br>
                             </td>
