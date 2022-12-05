@@ -33,7 +33,7 @@ class ReportController extends Controller
 			$earlier = new \DateTime($startDate);
 			$later = new \DateTime($endDate);
 			$diff = $later->diff($earlier)->format("%a");
-			
+
 			if ($diff >= 31) {
 				return redirect('admin/reports/revenue');
 			}
@@ -53,14 +53,14 @@ class ReportController extends Controller
 			WHERE date < :end_date_series
 			),
 			filtered_orders AS (
-				SELECT * 
+				SELECT *
 				FROM orders
 				WHERE DATE(order_date) >= :start_date
 					AND DATE(order_date) <= :end_date
 					AND status = :status
 					AND payment_status = :payment_status
 			)
-		 SELECT 
+		 SELECT
 			 DISTINCT DR.date,
 			 COUNT(FO.id) num_of_orders,
 			 COALESCE(SUM(FO.grand_total),0) gross_revenue,
@@ -84,6 +84,9 @@ class ReportController extends Controller
 			]
 		);
 
+        $laporan = \DB::select(\DB::raw('SELECT * FROM v_bestsellers'));
+        $laporan2 = \DB::select(\DB::raw('SELECT * FROM v_totalpenjualan'));
+
 		$revenues = ($startDate && $endDate) ? $revenues : [];
 
 		if ($exportAs = $request->input('export')) {
@@ -92,19 +95,19 @@ class ReportController extends Controller
 			}
 
 			if ($exportAs == 'xlsx') {
-				$fileName = 'report-revenue-'. $startDate .'-'. $endDate .'.xlsx';
+				$fileName = 'Laporan-'. $startDate .'-'. $endDate .'.xlsx';
 
-				return Excel::download(new RevenueExport($revenues), $fileName);
+				return Excel::download(new RevenueExport($revenues, $laporan, $laporan2), $fileName);
 			}
 
 			if ($exportAs == 'pdf') {
-				$fileName = 'report-revenue-'. $startDate .'-'. $endDate .'.pdf';
-				$pdf = PDF::loadView('admin.reports.exports.revenue-pdf', compact('revenues', 'startDate','endDate'));
+				$fileName = 'Laporan-'. $startDate .'-'. $endDate .'.pdf';
+				$pdf = PDF::loadView('admin.reports.exports.revenue-pdf', compact('revenues', 'startDate','endDate','laporan','laporan2'));
 
 				return $pdf->download($fileName);
 			}
         }
 
-		return view('admin.reports.revenue', compact('revenues','startDate','endDate'));
+		return view('admin.reports.revenue', compact('revenues','startDate','endDate', 'laporan','laporan2'));
 	}
 }

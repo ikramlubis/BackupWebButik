@@ -9,6 +9,8 @@ class RevenueExport implements FromView
 {
 
 	private $_results;
+    private $_results2;
+    private $_results3;
 
 	/**
 	 * Create a new exporter instance.
@@ -17,9 +19,11 @@ class RevenueExport implements FromView
 	 *
 	 * @return void
 	 */
-	public function __construct($results)
+	public function __construct($results,$results2,$results3)
 	{
 		$this->_results = $results;
+        $this->_results2 = $results2;
+        $this->_results3 = $results3;
 	}
 
 	/**
@@ -33,6 +37,8 @@ class RevenueExport implements FromView
 			'admin.reports.exports.revenue-excel',
 			[
 				'revenues' => $this->_results,
+                'laporan' => $this->_results2,
+                'laporan2' => $this->_results3,
 			]
 		);
 	}

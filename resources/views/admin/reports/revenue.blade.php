@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+
 @section('content')
 	<div class="container">
         <div class="content">
@@ -7,7 +8,7 @@
                 <div class="col-lg-12">
                     <div class="card card-default">
                         <div class="card-header card-header-border-bottom">
-                            <h2>Revenue Report</h2>
+                            <h2>Laporan Penjualan</h2>
                         </div>
                         <div class="card-body">
                             <form action="" class="mb-5">
@@ -59,7 +60,7 @@
                                             $totalNetRevenue = 0;
                                         @endphp
                                         @forelse ($revenues as $revenue)
-                                            <tr>    
+                                            <tr>
                                                 <td>{{ $revenue->date }}</td>
                                                 <td>
                                                     <a href="{{ url('admin/orders?start='. $revenue->date .'&end='. $revenue->date . '&status=completed') }}">{{ $revenue->num_of_orders }}</a>
@@ -82,7 +83,7 @@
                                                 <td colspan="6">No records found</td>
                                             </tr>
                                         @endforelse
-                                        
+
                                         @if ($revenues)
                                             <tr>
                                                 <td>Total</td>
@@ -94,6 +95,48 @@
                                             </tr>
                                         @endif
                                     </tbody>
+                                </table>
+
+                                <br>
+
+                                <h2>Best Seller</h2>
+
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <th>ID</th>
+                                        <th>Barang</th>
+                                        <th>Harga</th>
+                                        <th>Terjual</th>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($laporan as $lapor)
+                                        <tr>
+                                        <td>{{ $lapor->id }}</td>
+                                        <td>{{ $lapor->nama }}</td>
+                                        <td>{{ $lapor->harga }}</td>
+                                        <td>{{ $lapor->terjual }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                                <br>
+
+                                <h2>Total Penjualan</h2>
+
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <th> Total Barang Terjual </th>
+                                        <th> Total Penjualan </th>
+                                    </thead>
+                                    <tbody>
+                                    @foreach ($laporan2 as $lapor2 )
+                                    <tr>
+                                        <td>{{ $lapor2->Barang_Terjual }}</td>
+                                        <td>{{ $lapor2->Total_Penghasilan }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
                                 </table>
                            </div>
                         </div>

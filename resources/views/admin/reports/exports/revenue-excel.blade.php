@@ -18,7 +18,7 @@
 			$totalNetRevenue = 0;
 		@endphp
 		@foreach ($revenues as $revenue)
-			<tr>    
+			<tr>
 				<td>{{ $revenue->date, 'd M Y' }}</td>
 				<td>{{ $revenue->num_of_orders }}</td>
 				<td>{{ $revenue->gross_revenue }}</td>
@@ -44,4 +44,42 @@
 			<td>{{ $totalNetRevenue }}</td>
 		</tr>
 	</tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Barang</th>
+        <th>Harga</th>
+        <th>Terjual</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($laporan as $lapor)
+        <tr>
+        <td>{{ $lapor->id }}</td>
+        <td>{{ $lapor->nama }}</td>
+        <td>{{ $lapor->harga }}</td>
+        <td>{{ $lapor->terjual }}</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+        <th> Total Barang Terjual </th>
+        <th> Total Penjualan </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($laporan2 as $lapor2 )
+        <tr>
+            <td>{{ $lapor2->Barang_Terjual }}</td>
+            <td>{{ $lapor2->Total_Penghasilan }}</td>
+        </tr>
+        @endforeach
+</tbody>
 </table>
