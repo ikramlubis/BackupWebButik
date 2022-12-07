@@ -151,6 +151,12 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>
+
+                                        @can('dashboard_access')
+                                        <li>
+                                            | <a href="{{ route('admin.dashboard.index')}}"> Dashboard Admin </a>
+                                        </li>
+                                        @endcan
                                     @endguest
                                 </ul>
                             </div>

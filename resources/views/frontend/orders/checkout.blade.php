@@ -84,7 +84,7 @@
 							<div class="col-md-6">
 								<div class="checkout-form-list">
 									<label>Phone  <span class="required">*</span></label>
-									<input type="text" name="phone" placeholder="Phone..." value="{{ auth()->user()->phone }}">
+									<input type="number" name="phone" placeholder="Phone..." value="{{ auth()->user()->phone }}">
 								</div>
 							</div>
 							<div class="col-md-6">
