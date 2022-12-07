@@ -322,7 +322,7 @@ class OrderController extends Controller
 
 		if (!isset($order)) {
 			return redirect()->back()->with([
-				'message' => 'something went wrong !',
+				'message' => 'Terjadi kesalahan!',
 				'alert-type' => 'danger'
 			]);
 			// return redirect()->route('checkout.received', $order->id);

@@ -54,7 +54,7 @@ class ReviewController extends Controller
         $review->update($request->validated());
 
         return redirect()->route('admin.reviews.index')->with([
-            'message' => 'success updated !',
+            'message' => 'Berhasil diperbaharui!',
             'alert-type' => 'info'
         ]);
     }
@@ -70,7 +70,7 @@ class ReviewController extends Controller
         $review->delete();
 
         return redirect()->route('admin.reviews.index')->with([
-            'message' => 'success deleted !',
+            'message' => 'Berhasil dihapus!',
             'alert-type' => 'danger'
         ]);
     }

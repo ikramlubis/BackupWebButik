@@ -39,7 +39,7 @@
                                     <a href="{{ route('admin.permissions.edit', $permission->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
                                     </a>
-                                    <form onclick="return alert('are you sure ? ')" class="d-inline" action="{{ route('admin.permissions.destroy', $permission->id) }}" method="POST">
+                                    <form onclick="return alert('apakah anda yakin? ')" class="d-inline" action="{{ route('admin.permissions.destroy', $permission->id) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">

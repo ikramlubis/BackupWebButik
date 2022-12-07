@@ -27,7 +27,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>
                             {{ $order->code }} <br/>
-                            {{ $order->order_date }}                                                    
+                            {{ $order->order_date }}
                             </td>
                             <td>{{ $order->grand_total }}</td>
                             <td>
@@ -41,7 +41,7 @@
                                     <a href="{{ route('admin.orders.show', $order) }}" class="btn btn-sm btn-primary">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                    <form onclick="return confirm('are you sure !')" action="{{ route('admin.orders.destroy', $order) }}"
+                                    <form onclick="return confirm('apakah anda yakin?')" action="{{ route('admin.orders.destroy', $order) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')

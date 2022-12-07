@@ -56,7 +56,7 @@ class SlideController extends Controller
         ]);
 
         return redirect()->route('admin.slides.index')->with([
-            'message' => 'success created !',
+            'message' => 'Berhasil dibuat!',
             'alert-type' => 'success'
         ]);
     }
@@ -108,7 +108,7 @@ class SlideController extends Controller
         ]);
 
         return redirect()->route('admin.slides.index')->with([
-            'message' => 'success updated !',
+            'message' => 'Berhasil diperbaharui!',
             'alert-type' => 'info'
         ]);
     }
@@ -130,9 +130,9 @@ class SlideController extends Controller
         $slide->delete();
 
         return redirect()->route('admin.slides.index')->with([
-            'message' => 'success deleted !',
+            'message' => 'Berhasil dihapus!',
             'alert-type' => 'danger'
-        ]);        
+        ]);
     }
 
     public function moveUp($slideId){
@@ -157,7 +157,7 @@ class SlideController extends Controller
 		);
 
 		return redirect()->route('admin.slides.index');
-    }   
+    }
 
     public function moveDown($slideId){
         $slide = Slide::findOrFail($slideId);
@@ -181,5 +181,5 @@ class SlideController extends Controller
 		);
 
 		return redirect()->route('admin.slides.index');
-    }   
+    }
 }

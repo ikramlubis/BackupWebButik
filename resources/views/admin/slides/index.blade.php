@@ -49,7 +49,7 @@
                                 @else
                                     up
                                 @endif
-                                    | 
+                                    |
                                 @if ($slide->nextSlide())
                                     <a href="{{ url('admin/slides/'. $slide->id .'/down') }}">down</a>
                                 @else
@@ -61,7 +61,7 @@
                                     <a href="{{ route('admin.slides.edit', $slide) }}" class="btn btn-sm btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <form onclick="return confirm('are you sure !')" action="{{ route('admin.slides.destroy', $slide) }}"
+                                    <form onclick="return confirm('apakah anda yakin?')" action="{{ route('admin.slides.destroy', $slide) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')

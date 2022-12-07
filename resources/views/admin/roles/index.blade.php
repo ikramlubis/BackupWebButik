@@ -45,7 +45,7 @@
                                     <a href="{{ route('admin.roles.edit', $role->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
                                     </a>
-                                    <form onclick="return alert('are you sure ? ')" class="d-inline" action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
+                                    <form onclick="return alert('apakah anda yakin? ')" class="d-inline" action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">

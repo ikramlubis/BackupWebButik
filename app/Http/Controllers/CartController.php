@@ -27,9 +27,9 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {		
+    {
         $product = Product::findOrFail($request->product_id);
-        
+
         $carts = \Cart::getContent();
 		$itemQuantity = 0;
 		if ($carts) {
@@ -53,7 +53,7 @@ class CartController extends Controller
                     'alert-type' => 'danger',
                 ]);
         }
-		
+
 		$item = [
 			'id' => md5($product->id),
 			'name' => $product->name,
@@ -63,9 +63,9 @@ class CartController extends Controller
 		];
 
         \Cart::add($item);
-        
+
 		return redirect()->back()->with([
-            'message' => 'success added to cart !',
+            'message' => 'Berhasil menambah ke keranjang!',
             'alert-type' => 'success',
             ]);;
     }
@@ -105,7 +105,7 @@ class CartController extends Controller
             }
 
             return redirect()->back()->with([
-                'message' => 'success updated !',
+                'message' => 'Berhasil diperbaharui!',
                 'alert-type' => 'info'
             ]);
         }
@@ -122,7 +122,7 @@ class CartController extends Controller
         \Cart::remove($cartId);
 
         return redirect()->back()->with([
-            'message' => 'success deleted !',
+            'message' => 'Berhasil dihapus!',
             'alert-type' => 'danger'
         ]);;
     }

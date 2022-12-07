@@ -53,7 +53,7 @@
                                     <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-sm btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <form onclick="return confirm('are you sure !')" action="{{ route('admin.categories.destroy', $category) }}"
+                                    <form onclick="return confirm('Apa anda yakin?')" action="{{ route('admin.categories.destroy', $category) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')

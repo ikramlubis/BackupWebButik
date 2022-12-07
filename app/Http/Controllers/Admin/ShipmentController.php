@@ -56,7 +56,7 @@ class ShipmentController extends Controller
 				$shipment->status = Shipment::SHIPPED;
 				$shipment->shipped_at = now();
 				$shipment->shipped_by = auth()->id();
-				
+
 				if ($shipment->save()) {
 					$shipment->order->status = Order::DELIVERED;
 					$shipment->order->save();
@@ -67,7 +67,7 @@ class ShipmentController extends Controller
 		);
 
 		return redirect()->route('admin.orders.show', $order->id)->with([
-            'message' => 'success updated shipment !',
+            'message' => 'Pengiriman berhasil diperbaharui!',
             'alert-type' => 'info'
         ]);
     }

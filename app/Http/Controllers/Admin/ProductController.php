@@ -20,10 +20,10 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         abort_if(Gate::denies('product_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $products = Product::with('category', 'tags', 'firstMedia')->latest()->paginate(5); 
+        $products = Product::with('category', 'tags', 'firstMedia')->latest()->paginate(5);
 
         return view('admin.products.index', compact('products'));
     }
@@ -52,7 +52,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         abort_if(Gate::denies('product_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-       
+
         if ($request->validated()){
             $product = Product::create($request->except('tags', 'images', '_token'));
             $product->tags()->attach($request->tags);
@@ -62,13 +62,13 @@ class ProductController extends Controller
             }
 
             return redirect()->route('admin.products.index')->with([
-                'message' => 'success created !',
+                'message' => 'Berhasil dibuat!',
                 'alert-type' => 'success'
             ]);
         }
 
         return back()->with([
-            'message' => 'Something was wrong, please try again later',
+            'message' => 'Terjadi kesalahan, coba lagi nanti!',
             'alert-type' => 'danger'
         ]);
     }
@@ -95,7 +95,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         abort_if(Gate::denies('product_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        
+
         $categories = Category::latest()->get(['id', 'name']);
         $tags = Tag::latest()->get(['id', 'name']);
 
@@ -124,15 +124,15 @@ class ProductController extends Controller
             }
 
             return redirect()->route('admin.products.index')->with([
-                'message' => 'success created !',
+                'message' => 'Berhasil dibuat!',
                 'alert-type' => 'success'
             ]);
         }
 
         return back()->with([
-            'message' => 'Something was wrong, please try again late',
+            'message' => 'Terjadi kesalahan, coba lagi nanti!',
             'alert-type' => 'danger'
-        ]);  
+        ]);
     }
 
     /**
@@ -155,7 +155,7 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('admin.products.index')->with([
-            'message' => 'success deleted !',
+            'message' => 'Berhasil dihapus!',
             'alert-type' => 'danger',
             ]);
     }
@@ -163,7 +163,7 @@ class ProductController extends Controller
     public function removeImage(Request $request)
     {
         abort_if(Gate::denies('product_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-       
+
         $product = Product::findOrFail($request->product_id);
         $image = $product->media()->whereId($request->image_id)->first();
 

@@ -16,12 +16,12 @@ class ProfileController extends Controller
 
 		return view('frontend.users.profile', compact('provinces', 'cities','user'));
 	}
-	
-	public function update(ProfileRequest $request){		
+
+	public function update(ProfileRequest $request){
         $user = auth()->user();
 
         $user->update($request->validated());
 
-		return redirect()->route('profile.index')->with(['message' => 'success updated']);
+		return redirect()->route('profile.index')->with(['message' => 'berhasil diperbaharui!']);
 	}
 }

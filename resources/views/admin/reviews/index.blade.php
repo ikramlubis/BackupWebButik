@@ -42,7 +42,7 @@
                                     <a href="{{ route('admin.reviews.edit', $review) }}" class="btn btn-sm btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <form onclick="return confirm('are you sure !')" action="{{ route('admin.reviews.destroy', $review) }}"
+                                    <form onclick="return confirm('apakah anda yakin?')" action="{{ route('admin.reviews.destroy', $review) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')

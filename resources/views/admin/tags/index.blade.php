@@ -42,7 +42,7 @@
                                     <a href="{{ route('admin.tags.edit', $tag) }}" class="btn btn-sm btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <form onclick="return confirm('are you sure !')" action="{{ route('admin.tags.destroy', $tag) }}"
+                                    <form onclick="return confirm('apakah anda yakin?')" action="{{ route('admin.tags.destroy', $tag) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')

@@ -19,10 +19,10 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         abort_if(Gate::denies('category_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $categories = Category::with('parent')->withCount('products')->latest()->paginate(5); 
+        $categories = Category::with('parent')->withCount('products')->latest()->paginate(5);
 
         return view('admin.categories.index', compact('categories'));
     }
@@ -63,7 +63,7 @@ class CategoryController extends Controller
         ]);
 
         return redirect()->route('admin.categories.index')->with([
-            'message' => 'success created !',
+            'message' => 'Berhasil dibuat!',
             'alert-type' => 'success'
         ]);
     }
@@ -122,9 +122,9 @@ class CategoryController extends Controller
         ]);
 
         return redirect()->route('admin.categories.index')->with([
-            'message' => 'success updated !',
+            'message' => 'Berhasil diperbaharui!',
             'alert-type' => 'info'
-        ]);    
+        ]);
     }
 
     /**
@@ -154,7 +154,7 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('admin.categories.index')->with([
-            'message' => 'success deleted !',
+            'message' => 'Berhasil dihapus!',
             'alert-type' => 'danger',
             ]);
     }

@@ -42,7 +42,8 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        $user = User::create($request->validated() + ['password' => bcrypt($request->password)]);
+        $user = User::create($request->validated() + ['password' => bcrypt($request->password),
+        'username' => ($request->name)]);
         $user->roles()->sync($request->input('roles'));
 
         return redirect()->route('admin.users.index')->with('message', "Successfully Created !");

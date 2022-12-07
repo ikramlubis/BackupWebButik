@@ -88,7 +88,7 @@ class OrderController extends Controller
         );
 
         return redirect()->route('admin.orders.index')->with([
-            'message' => 'success deleted !',
+            'message' => 'Berhasil dihapus!',
             'alert-type' => 'danger'
         ]);    ;
     }
@@ -132,7 +132,7 @@ class OrderController extends Controller
 		);
 
 		return redirect()->route('admin.orders.index')->with([
-            'message' => 'success cancelled !',
+            'message' => 'Berhasil dibatalkan!',
             'alert-type' => 'danger'
         ]);    ;
     }
@@ -151,7 +151,7 @@ class OrderController extends Controller
 
 		if ($order->save()) {
 			return redirect()->route('admin.orders.index')->with([
-                'message' => 'completed order !',
+                'message' => 'Pesanan selesai!',
                 'alert-type' => 'success'
             ]);    ;
 		}
