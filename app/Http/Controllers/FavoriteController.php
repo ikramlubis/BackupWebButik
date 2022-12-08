@@ -39,12 +39,12 @@ class FavoriteController extends Controller
 		);
 
 		$product = Product::where('slug', $request->get('product_slug'))->firstOrFail();
-		
+
 		$favorite = Favorite::where('user_id', auth()->id())
 			->where('product_id', $product->id)
 			->first();
 		if ($favorite) {
-			return response('You have added this product to your favorite before', 422);
+			return response('Produk ini sudah dimasukkan ke Favorit', 422);
 		}
 
 		Favorite::create(
@@ -54,7 +54,7 @@ class FavoriteController extends Controller
 			]
 		);
 
-		return response('The product has been added to your favorite', 200);
+		return response('Berhasil ditambahkan ke Favorit', 200);
     }
 
     /**
@@ -66,7 +66,7 @@ class FavoriteController extends Controller
     public function destroy(Favorite $favorite)
 	{
 		$favorite->delete();
-		
+
 		return redirect()->back();
 	}
 }

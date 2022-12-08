@@ -34,10 +34,6 @@
                         <input type="email" class="form-control" id="email" placeholder="{{ __('Email') }}" name="email" value="{{ old('email',  $user->email) }}" />
                     </div>
                     <div class="form-group">
-                        <label for="password">{{ __('Password') }}</label>
-                        <input type="text" class="form-control" id="password" placeholder="{{ __('Password') }}" name="password" value="{{ old('password',  $user->password) }}" />
-                    </div>
-                    <div class="form-group">
                         <label for="roles">{{ __('Role') }}</label>
                         <select name="roles[]" id="roles" class="form-control select2" multiple="multiple" required>
                             @foreach($roles as $id => $roles)

@@ -100,7 +100,7 @@
                                             </div>
                                         </li>
                                         <li class="cart-btn-wrapper">
-                                            <a class="cart-btn btn-hover" href="{{ route('cart.index') }}">view cart</a>
+                                            <a class="cart-btn btn-hover" href="{{ route('cart.index') }}">keranjang</a>
                                             <a class="cart-btn btn-hover" href="{{ route('checkout.process') }}">checkout</a>
                                         </li>
                                     </ul>

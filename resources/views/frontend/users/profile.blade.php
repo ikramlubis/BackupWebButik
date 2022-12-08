@@ -48,14 +48,14 @@
 									</div>
 									<div class="form-group row">
 										<div class="col-md-6">
-                                            <label for="first_name">First Name</label>
+                                            <label for="first_name">Nama Depan</label>
                                             <input type="text" name="first_name" value="{{ auth()->user()->first_name }}">
                                             @error('first_name')
 												<div class="alert alert-danger">{{ $message }}</div>
 											@enderror
 										</div>
 										<div class="col-md-6">
-                                            <label for="last_name">Last Name</label>
+                                            <label for="last_name">Nama Belakang</label>
                                             <input type="text" name="last_name" value="{{ auth()->user()->last_name }}">
                                             @error('last_name')
 												<div class="alert alert-danger">{{ $message }}</div>
@@ -65,7 +65,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-12">
-                                            <label for="address1">Address1</label>
+                                            <label for="address1">Alamat 1</label>
                                             <textarea name="address1" rows="5">{{ auth()->user()->address1 }}</textarea>
 											@error('address1')
 												<div class="alert alert-danger">{{ $message }}</div>
@@ -75,7 +75,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-12">
-                                            <label for="address2">Address2</label>
+                                            <label for="address2">Alamat 2</label>
                                             <textarea name="address2" rows="5">{{ auth()->user()->address2 }}</textarea>
 											@error('address2')
 												<div class="alert alert-danger">{{ $message }}</div>
@@ -85,24 +85,24 @@
 
 									<div class="form-group row">
 										<div class="col-md-6">
-                                            <label>Province<span class="required">*</span></label>
+                                            <label>Provinsi<span class="required">*</span></label>
                                             <select name="province_id" id="province-id" value="{{ auth()->user()->province_id }}">
                                                     <option value="">- Please Select -</option>
                                                 @foreach($provinces as $province => $pro)
                                                     <option {{ auth()->user()->province_id == $province ? 'selected' : null }} value="{{ $province }}">{{ $pro }}</option>
                                                 @endforeach
-                                            </select> 
+                                            </select>
 											@error('province_id')
 												<div class="alert alert-danger">{{ $message }}</div>
 											@enderror
 										</div>
 										<div class="col-md-6">
-                                            <label>City<span class="required">*</span></label>
+                                            <label>Kota<span class="required">*</span></label>
                                             <select name="city_id" id="city-id"  value="{{ auth()->user()->city_id }}" >
                                                 @foreach($cities as $city => $ty)
                                                     <option {{ auth()->user()->city_id == $city ? 'selected' : null }} value="{{ $city }}">{{ $ty }}</option>
                                                 @endforeach
-                                            </select> 
+                                            </select>
 											@error('city_id')
 												<div class="alert alert-danger">{{ $message }}</div>
 											@enderror
@@ -111,14 +111,14 @@
 
 									<div class="form-group row">
 										<div class="col-md-6">
-                                        <label>Postcode / Zip <span class="required">*</span></label>						
+                                        <label>Kode Pos <span class="required">*</span></label>
 									    <input type="number" name="postcode" placeholder="PostalCode..." value="{{ auth()->user()->postcode }}">
 											@error('postcode')
 												<div class="alert alert-danger">{{ $message }}</div>
 											@enderror
 										</div>
 										<div class="col-md-6">
-                                            <label>Phone  <span class="required">*</span></label>		
+                                            <label>No. Telepon  <span class="required">*</span></label>
 									        <input type="number" name="phone" placeholder="Phone..." value="{{ auth()->user()->phone }}">
 											@error('phone')
 												<div class="alert alert-danger">{{ $message }}</div>
@@ -129,14 +129,14 @@
 									<div class="form-group row">
 										<div class="col-md-12">
                                             <label>Email Address </label>
-									        <input type="text" name="email" placeholder="Email..." value="{{ auth()->user()->email}}">		
+									        <input type="text" name="email" placeholder="Email..." value="{{ auth()->user()->email}}">
 											@error('email')
 												<div class="alert alert-danger">{{ $message }}</div>
 											@enderror
 										</div>
 									</div>
 									<div class="button-box">
-										<button type="submit" class="default-btn floatright">Update Profile</button>
+										<button type="submit" class="default-btn floatright">Update Profil</button>
 									</div>
                                 </form>
 							</div>

@@ -16,16 +16,16 @@
                         </div>
                     @endif
 
-					<h1 class="cart-heading text-center">Cart Page</h1>
+					<h1 class="cart-heading text-center">Keranjang</h1>
 						<div class="table-content table-responsive">
 							<table>
 								<thead>
 									<tr>
-										<th>remove</th>
-										<th>images</th>
-										<th>Product</th>
-										<th>Price</th>
-										<th>Quantity</th>
+										<th>hapus</th>
+										<th>gambar</th>
+										<th>produk</th>
+										<th>harga</th>
+										<th>jumlah</th>
 										<th>Total</th>
 									</tr>
 								</thead>
@@ -58,7 +58,7 @@
 										</tr>
 									@empty
 										<tr>
-											<td colspan="6">The cart is empty!</td>
+											<td colspan="6">Keranjangnya kosong :(</td>
 										</tr>
 									@endforelse
 								</tbody>
@@ -77,11 +77,11 @@
 						<div class="row">
 							<div class="col-md-5 ml-auto">
 								<div class="cart-page-total">
-									<h2>Cart totals</h2>
+									<h2>Total Keranjang</h2>
 									<ul>
 										<li>Total<span>{{ number_format(\Cart::getTotal()) }}</span></li>
 									</ul>
-									<a href="{{ route('checkout.process') }}">Proceed to checkout</a>
+									<a href="{{ route('checkout.process') }}">Checkout</a>
 								</div>
 							</div>
 						</div>
