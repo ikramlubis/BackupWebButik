@@ -144,7 +144,7 @@ function getQuickView(product_slug) {
                 qty: 1,
             },
             success: function (response) {
-                swal("Success !");
+                swal("Berhasil !");
                 location.reload(true);
             },
         });
@@ -167,7 +167,7 @@ function getQuickView(product_slug) {
             },
             error: function (xhr, textStatus, errorThrown) {
                 if (xhr.status == 401) {
-                    alert("login dulu !");
+                    alert("Login dulu!");
                 }
 
                 if (xhr.status == 422) {
