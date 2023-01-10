@@ -154,7 +154,7 @@
 
                                         @can('dashboard_access')
                                         <li>
-                                            | <a href="{{ route('admin.dashboard.index')}}"> Dashboard Admin </a>
+                                            | <a href="{{ route('admin.dashboard.index')}}"> Dashboard </a>
                                         </li>
                                         @endcan
                                     @endguest

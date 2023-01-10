@@ -83,3 +83,22 @@
         @endforeach
 </tbody>
 </table>
+
+<table>
+    <thead>
+        <tr>
+        <th> Id </th>
+        <th> Nama Produk </th>
+        <th> Stok </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($laporan3 as $lapor3 )
+        <tr>
+            <td>{{ $lapor3->id }}</td>
+            <td>{{ $lapor3->name }}</td>
+            <td>{{ $lapor3->quantity }}</td>
+        </tr>
+        @endforeach
+</tbody>
+</table>

@@ -84,41 +84,5 @@
 				</tr>
 			</tbody>
 		</table>
-
-        <br>
-
-        <h2>Best Sellers</h2>
-
-        <table>
-            <thead>
-                 <th>ID</th>
-                 <th>Barang</th>
-                 <th>Harga</th>
-                 <th>Terjual</th>
-                 </thead>
-                 <tbody>
-                 @foreach($laporan as $lapor)
-                 <tr>
-                    <td>{{ $lapor->id }}</td>
-                    <td>{{ $lapor->nama }}</td>
-                    <td>{{ $lapor->harga }}</td>
-                    <td>{{ $lapor->terjual }}</td>
-                 </tr>
-                 @endforeach
-                 </tbody>
-        </table>
-
-        <table>
-            <thead>
-                <th> Total Barang Terjual </th>
-                <th> Total Penjualan </th>
-            </thead>
-            @foreach ($laporan2 as $lapor2 )
-                <tr>
-                    <td>{{ $lapor2->Barang_Terjual }}</td>
-                    <td>{{ $lapor2->Total_Penghasilan }}</td>
-                </tr>
-            @endforeach
-        </table>
  	</body>
 </html>

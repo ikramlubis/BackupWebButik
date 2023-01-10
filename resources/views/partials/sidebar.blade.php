@@ -64,7 +64,10 @@
                 </a>
                 <div id="collapseReports" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ request()->is('admin/reports/revenue') ? 'active' : '' }}" href="{{ route('admin.reports.revenue') }}"> <i class="fa fa-briefcase mr-2"></i> {{ __('Revenues') }}</a>
+                        <a class="collapse-item {{ request()->is('admin/reports/revenue') ? 'active' : '' }}" href="{{ route('admin.reports.revenue') }}"> <i class="fa fa-briefcase mr-2"></i>Revenue</a>
+                        <a class="collapse-item {{ request()->is('admin/reports/customer') ? 'active' : '' }}" href="{{ route('admin.reports.customer') }}"> <i class="fa fa-user mr-2"></i>Customer</a>
+                        <a class="collapse-item {{ request()->is('admin/reports/product_sold') ? 'active' : '' }}" href="{{ route('admin.reports.product_sold') }}"> <i class="fa fa-shopping-cart mr-2"></i>Sold Product</a>
+                        <a class="collapse-item {{ request()->is('admin/reports/product') ? 'active' : '' }}" href="{{ route('admin.reports.product') }}"> <i class="fa fa-shopping-cart mr-2"></i>Stok Produk</a>
                     </div>
                 </div>
             </li>

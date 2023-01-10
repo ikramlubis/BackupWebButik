@@ -26,7 +26,6 @@
                         <th>Image</th>
                         <th>Name</th>
                         <th>Product count</th>
-                        <th>Parent</th>
                         <th class="text-center" style="width: 30px;">Action</th>
                     </tr>
                     </thead>
@@ -47,7 +46,6 @@
                                 </a>
                             </td>
                             <td>{{ $category->products_count }}</td>
-                            <td>{{ $category->parent->name ?? '' }}</td>
                             <td>
                                 <div class="btn-group btn-group-sm">
                                     <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-sm btn-primary">

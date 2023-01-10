@@ -29,6 +29,7 @@
                                 <th>{{ __('Name') }}</th>
                                 <th>{{ __('Email') }}</th>
                                 <th>{{ __('Roles') }}</th>
+                                <th>Status</th>
                                 <th>{{ __('Action') }}</th>
                             </tr>
                         </thead>
@@ -38,11 +39,15 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->email }}</td>
+
                                 <td>
                                     @foreach($user->roles as $key => $role)
                                         <span class="badge badge-info">{{ $role->title }}</span>
                                     @endforeach
                                 </td>
+
+                                <td>{{ ($user->status == 1) ? 'Active' : 'Inactive'}}</td>
+
                                 <td>
                                     <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>

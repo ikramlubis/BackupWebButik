@@ -21,7 +21,7 @@ class UserController extends BaseController
             return $this->responseError('Login Failed !', 422, $validator->errors());
         }
 
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'active' => 1])){
             $user = auth()->user();
 
             $response = [
@@ -29,7 +29,7 @@ class UserController extends BaseController
                 'first_name' => $user->first_name,
                 'last_name' => $user->last_name,
             ];
-    
+
             return $this->responseOk($response);
 
         }else {
@@ -57,7 +57,7 @@ class UserController extends BaseController
 
         if (!$user = User::create($params)) {
             return $this->responseError('Registration failed', 400);
-        } 
+        }
 
         $token = $user->createToken('MyToken')->accessToken;
 

@@ -90,9 +90,9 @@
                                     <div class="quickview-btn-cart">
                                         <button type="submit" class="submit contact-btn btn-hover">tambah ke keranjang</button>
                                     </div>
-                                    <div class="quickview-btn-wishlist">
+                                    {{-- <div class="quickview-btn-wishlist">
                                         <a class="btn-hover" href="#"><i class="pe-7s-like"></i></a>
-                                    </div>
+                                    </div> --}}
                                 </div>
 							</form>
                         <div class="product-details-cati-tag mt-35">
@@ -128,7 +128,7 @@
                         Review ({{ $product->approved_reviews_count }})
                     </a>
                     <a href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
-                        Deskripsi
+                        Detail
                     </a>
                 </div>
                 <div class="description-review-text tab-content">
@@ -154,7 +154,7 @@
             <div class="container-fluid">
                 <br>
                 <div class="section-title-furits section-title-6 text-center mb-50">
-                    <h2>Relate Product</h2>
+                    <h2>Related Product</h2>
                 </div>
                 <br>
                 <div class="product-style">

@@ -10,7 +10,7 @@
 				</div>
 				<div class="card-body">
                     <form action="{{ url('admin/shipments', $shipment->id) }}" method="post">
-                        @csrf 
+                        @csrf
                         @method('put')
                         <div class="form-group row">
                             <div class="col-md-6">
@@ -37,7 +37,7 @@
                                 @foreach($provinces as $province => $pro)
                                     <option {{ $shipment->province_id == $province ? 'selected' : null }} value="{{ $province }}">{{ $pro }}</option>
                                 @endforeach
-                            </select> 
+                            </select>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-6">
@@ -46,7 +46,7 @@
                                     @foreach($cities as $city => $ty)
                                         <option {{ $shipment->city_id == $city ? 'selected' : null }} value="{{ $city }}">{{ $ty }}</option>
                                     @endforeach
-                                </select> 
+                                </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="postcode">Postcode</label>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="track_number">Track Number</label>
+                            <label for="track_number">Note</label>
                             <input type="text" name="track_number" value="{{ $shipment->track_number }}" class="form-control" >
                         </div>
                         <div class="form-footer pt-5 border-top">
@@ -83,7 +83,7 @@
                         </div>
                     </form>
 				</div>
-			</div>  
+			</div>
 		</div>
 		<div class="col-lg-6">
 			<div class="card card-default">

@@ -97,11 +97,10 @@
 						<div class="different-address">
 							<div class="ship-different-title">
 								<h3>
-									<label>Ship to a different address?</label>
-									<input id="ship-box" type="checkbox" name="ship_to"/>
+									<label></label>
 								</h3>
 							</div>
-							<div id="ship-box-info">
+							{{-- <div id="ship-box-info">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="checkout-form-list">
@@ -166,7 +165,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 							<div class="order-notes">
 								<div class="checkout-form-list mrg-nn">
 									<label for="note">Order Notes</label>

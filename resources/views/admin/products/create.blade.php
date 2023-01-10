@@ -61,7 +61,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="tags">Tags</label>
-                                <select name="tags[]" id="tags" class="form-control select2" multiple="multiple" required>
+                                <select name="tags[]" id="tags" class="form-control select2" multiple="multiple">
                                     @forelse($tags as $tag)
                                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                     @empty

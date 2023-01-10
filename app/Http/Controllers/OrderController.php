@@ -197,9 +197,6 @@ class OrderController extends Controller
 			$selectedShipping = $this->getSelectedShipping($destination,$totalWeight, $params['shipping_service']);
 
 			$baseTotalPrice = \Cart::getSubTotal();
-            $selectedShipping['cost'] = 7000;
-            $selectedShipping['courier'] ='JNE';
-            $selectedShipping['service'] = 'JNE';
 			$shippingCost = $selectedShipping['cost'];
 			$discountAmount = 0;
 			$discountPercent = 0;

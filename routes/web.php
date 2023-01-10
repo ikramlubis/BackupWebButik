@@ -53,7 +53,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
         Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
-    
+
         Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
         Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
         Route::post('/products/remove-image', [\App\Http\Controllers\Admin\ProductController::class, 'removeImage'])->name('products.removeImage');
@@ -70,6 +70,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('shipments', \App\Http\Controllers\Admin\ShipmentController::class)->only(['index','edit','update']);
 
         Route::get('reports/revenue', [\App\Http\Controllers\Admin\ReportController::class, 'revenue'])->name('reports.revenue');
+        Route::get('reports/customer', [\App\Http\Controllers\Admin\ReportController::class, 'customer'])->name('reports.customer');
+        Route::get('reports/product_sold', [\App\Http\Controllers\Admin\ReportController::class, 'product_sold'])->name('reports.product_sold');
+        Route::get('reports/product', [\App\Http\Controllers\Admin\ReportController::class, 'product'])->name('reports.product');
     });
 });
 

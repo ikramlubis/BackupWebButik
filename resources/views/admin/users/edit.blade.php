@@ -34,6 +34,15 @@
                         <input type="email" class="form-control" id="email" placeholder="{{ __('Email') }}" name="email" value="{{ old('email',  $user->email) }}" />
                     </div>
                     <div class="form-group">
+                        <label for="status">Status</label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="">- Select Status-</option>
+                            <option value="1" {{ old('status', $user->status) == "Active" ? 'selected' : null }}>Active</option>
+                            <option value="0" {{ old('status', $user->status) == "Inactive" ? 'selected' : null }}>Inactive</option>
+                        </select>
+                        @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                    </div>
+                    <div class="form-group">
                         <label for="roles">{{ __('Role') }}</label>
                         <select name="roles[]" id="roles" class="form-control select2" multiple="multiple" required>
                             @foreach($roles as $id => $roles)

@@ -45,7 +45,6 @@
                                         <img src="{{ asset('frontend/assets/img/product/book/1.jpg' ) }}" alt="{{ $product->name }}" style="width: 100%;">
                                     @endif
                                 </a>
-                                <span>hot</span>
                                 <div class="product-action">
                                     <a class="animate-left add-to-fav" title="Favorite"  product-slug="{{ $product->slug }}" href="">
                                         <i class="pe-7s-like"></i>
@@ -80,7 +79,7 @@
                                         <img src="{{ asset('frontend/assets/img/product/book/1.jpg' ) }}" alt="{{ $product->name }}" style="width: 100%;">
                                     @endif
                                 </a>
-                                <span>hot</span>
+                                <span></span>
                             </div>
                             <div class="product-content-list">
                                 <div class="product-list-info">
